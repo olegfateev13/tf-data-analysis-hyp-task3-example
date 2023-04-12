@@ -6,7 +6,7 @@ import numpy as np
 chat_id = 263008738 
 
 def solution(sample) -> bool: # Одна или две выборке на входе, заполняется исходя из условия
-    t_stat, p_value = stats.ttest_1samp(sample, 500)
+    t_stat, p_value = stats.ttest_1samp(sample, 500, alternative='greater')
     alpha = 0.06
     if p_value < alpha:
         reject_null_hypothesis = True
